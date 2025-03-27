@@ -1,8 +1,6 @@
-﻿using System;
+﻿using AnimalSoundPlayer.Abstractions;
+using AnimalSoundPlayer.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AnimalSoundPlayer
 {
@@ -10,6 +8,18 @@ namespace AnimalSoundPlayer
     {
         static void Main(string[] args)
         {
+            var animals = new List<Animal>()
+            {
+                new Cat(),
+                new Chicken(),
+                new Dog(),
+                new Pig()
+            };
+
+            foreach (var animal in animals)
+            {
+                animal.MakeSound();
+            }
         }
     }
 }
