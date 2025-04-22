@@ -1,10 +1,13 @@
-﻿using AnimalSoundPlayer.Abstractions;
+﻿using AnimalSoundPlayer.Interfaces;
+using System;
 
 namespace AnimalSoundPlayer.Models
 {
-    public class Dog : Animal
+    public class Dog : IAnimal
     {
-        public override string Type => "Dog";
-        public override string Sound => "Gaf Gaf";
+        public void MakeSound()
+        {
+            Console.WriteLine($"{GetType().Name} makes sound: Gaf Gaf");
+        }
     }
 }

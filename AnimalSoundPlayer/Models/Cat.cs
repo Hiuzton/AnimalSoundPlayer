@@ -1,11 +1,13 @@
-﻿using AnimalSoundPlayer.Abstractions;
+﻿using AnimalSoundPlayer.Interfaces;
+using System;
 
 namespace AnimalSoundPlayer.Models
 {
-    public class Cat : Animal
+    public class Cat : IAnimal
     {
-        public override string Type => "Cat";
-
-        public override string Sound => "Miau Miau Miau";
+        public void MakeSound()
+        {
+            Console.WriteLine($"{GetType().Name} makes sound: Meow");
+        }
     }
 }

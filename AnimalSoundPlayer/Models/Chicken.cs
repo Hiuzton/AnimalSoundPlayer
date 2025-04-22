@@ -1,11 +1,13 @@
-﻿using AnimalSoundPlayer.Abstractions;
+﻿using AnimalSoundPlayer.Interfaces;
+using System;
 
 namespace AnimalSoundPlayer.Models
 {
-    public class Chicken : Animal
+    public class Chicken : IAnimal
     {
-        public override string Type => "Chicken";
-
-        public override string Sound => "Co Co Co Chhhhhaaannnneel";
+        public void MakeSound()
+        {
+            Console.WriteLine($"{GetType().Name} makes sound: Co Co Co Chhhhhaaannnneel");
+        }
     }
 }

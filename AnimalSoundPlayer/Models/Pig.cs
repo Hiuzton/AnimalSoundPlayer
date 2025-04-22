@@ -1,10 +1,13 @@
-﻿using AnimalSoundPlayer.Abstractions;
+﻿using AnimalSoundPlayer.Interfaces;
+using System;
 
 namespace AnimalSoundPlayer.Models
 {
-    public class Pig : Animal
+    public class Pig : IAnimal
     {
-        public override string Type => "Pig";
-        public override string Sound => "Hriu Hriu";
+        public void MakeSound()
+        {
+            Console.WriteLine($"{GetType().Name} makes sound: Hriu Hriu");
+        }
     }
 }

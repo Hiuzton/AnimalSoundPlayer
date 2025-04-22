@@ -1,4 +1,4 @@
-﻿using AnimalSoundPlayer.Abstractions;
+﻿using AnimalSoundPlayer.Interfaces;
 using AnimalSoundPlayer.Models;
 using System.Collections.Generic;
 
@@ -8,7 +8,7 @@ namespace AnimalSoundPlayer
     {
         static void Main(string[] args)
         {
-            var animals = new List<Animal>()
+            List<IAnimal> animals = new List<IAnimal>()
             {
                 new Cat(),
                 new Chicken(),
