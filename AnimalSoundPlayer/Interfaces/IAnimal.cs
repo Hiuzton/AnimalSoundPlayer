@@ -2,6 +2,6 @@
 {
     public interface IAnimal
     {
-        void MakeSound();
+        string MakeSound();
     }
 }

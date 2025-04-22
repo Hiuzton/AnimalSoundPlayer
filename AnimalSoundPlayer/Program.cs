@@ -1,5 +1,8 @@
-﻿using AnimalSoundPlayer.Interfaces;
+﻿using AnimalSoundPlayer.Factory;
+using AnimalSoundPlayer.Interfaces;
 using AnimalSoundPlayer.Models;
+using AnimalSoundPlayer.Strategy;
+using System;
 using System.Collections.Generic;
 
 namespace AnimalSoundPlayer
@@ -8,18 +11,22 @@ namespace AnimalSoundPlayer
     {
         static void Main(string[] args)
         {
-            List<IAnimal> animals = new List<IAnimal>()
+            List<IAnimal> animals = new List<IAnimal>
             {
-                new Cat(),
-                new Chicken(),
-                new Dog(),
-                new Pig()
+                AnimalFactory.Create("cat"),
+                AnimalFactory.Create("chicken"),
+                AnimalFactory.Create("dog"),
+                AnimalFactory.Create("pig"),
             };
+
+            ISoundStrategy strategy = new ConsoleSoundStrategy();
 
             foreach (var animal in animals)
             {
-                animal.MakeSound();
+                strategy.PlaySound(animal);
             }
+
+            Console.ReadLine();
         }
     }
 }

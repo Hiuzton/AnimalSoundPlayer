@@ -5,9 +5,6 @@ namespace AnimalSoundPlayer.Models
 {
     public class Dog : IAnimal
     {
-        public void MakeSound()
-        {
-            Console.WriteLine($"{GetType().Name} makes sound: Gaf Gaf");
-        }
+        public string MakeSound() => "Gaf Gaf";
     }
 }
